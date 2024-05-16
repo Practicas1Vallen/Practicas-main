@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<VAR:HEADER/>
+
+<body>
+
+    <VAR:MENU/>
+
+    <div class="container-fluid">
+
+        <div class="row content-sectionv">
+
+            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-right no-gutter mb-5">
+                <VAR:BANNER_SUPERIOR_SECCIONES/>
+                <h2 class="subtitle-interior">Historial de Despachos</h2>
+
+                <div id="form-cotizador" url_detalle="<VAR:URL_DETALLE_COT/>" url_preautoriza="<VAR:URL_PREAUTORIZA/>" url_actualiza_partida="<VAR:URL_UPDATE_PARTIDA/>">
+                    <div class="row form-row">
+                        <div class="col-md-3 offset-md-2 mb-5">
+                            <label for="fecha_requerida">Fecha Inicial</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input class="form-control date_picker" id="fecha_inicial" name="date_picker" placeholder="" type="text" readonly="">
+                            </div>                        
+                        </div>
+                        <div class="col-md-3 mb-5">
+                            <label for="fecha_requerida">Fecha Final</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input class="form-control date_picker" id="fecha_final" name="date_picker" placeholder="" type="text" readonly="">
+                            </div>                        
+                        </div>
+                        <div class="col-md-2">
+                            <label for="btn_filtrar">&nbsp;</label> <!-- CAMBIAR EL JAVASCRIPT-->
+                            <button type="button" class="btn btn-primary w-100" id="btn_filtrar" style="display: block;" onclick="javascript:filtra_despachos();" url="<VAR:URL_FILTRA_REQ/>">
+                                Filtrar <i class="fa fa-filter" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="grid-body">
+                                <table class="table table-striped table-hover mb-5 table-responsive" id="example3">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" >Folio</th>
+                                            <th scope="col" >Fecha </th>
+                                            <th scope="col" >Estatus</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="body_cotabierta">
+                                        <VAR:LISTA_COTIZACIONES/>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana emergente con detalles? -->
+   <!--<div class="modal fade" id="modal_detalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" url_cuenta="<VAR:URL_ACTUALIZA_CUENTA/>" url_busca_catalogo="<VAR:URL_BUSCA_CATALOGO/>">
+        <div class="modal-dialog modal-lg" style="max-width: 1100px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="tituloCesta" class="semi-bold">Detalle Cotización</h4>
+                </div>
+                <div class="modal-body body-scroll">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Num. de parte</th>
+                                <th>Descripción</th>
+                                <th>Marca</th>
+                                <th>Cantidad</th>
+                                <th width="100px">Precio</th>
+                                <th width="100px">Total</th>
+                                <th width="100px">Moneda</th>
+                                <th>Unidad de Medida</th>
+                                <th>T. Entrega</th>
+                                <th>Cuenta</th>
+                                <th>Imagen</th>
+                                <th>Seleccionar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_detalle">
+
+                        </tbody>
+                    </table>
+
+                    <div id="area_comentarios"></div>
+                </div>
+                <div class="modal-footer" id="footer_modal">
+
+            
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="modal fade" id="modal_img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" url="<VAR:URL_IMG_ARTICULO/>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="tituloCesta" class="semi-bold">Imagen</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6" style="height: 250px;text-align: center;">
+                            <img src="" id="img_cargada" style="max-width: 100%;width: auto;max-height: 100%;height: auto;text-align: center;position: absolute;">
+                        </div>
+                        <div class="col-md-6">
+                            <iframe src="" id="iframe_imagen" style="width: 100%;border: 0;"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-second" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <VAR:FOOTER/>
+    <!--<VAR:REPORTE_REQUISICIONES/>-->
+</body>
+
+</html>

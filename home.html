@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="es"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="es"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="es">
+<!--<![endif]-->
+
+<VAR:HEADER/>
+
+<body>
+    <VAR:MENU/> <!-- Aqui se llama el menu desplegable, se saca de MENU en home.php--> 
+    <div class="container-fluid">
+        <div class="row content-section-1 no-gutters" style="margin: 14px 0 0 0;">
+      
+            <div class="col-md-12 div-carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                    </ol>
+                    <!--PARTE DEL BANNER QUE SE MUEVE-->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <!-- <a href="https://www.vallen.com.mx/" target="_blank"> -->
+                                <video class="d-block w-100" controls="controls" loop autoplay="autoplay" preload="auto" muted>
+                                  <source src="<VAR:URL_CONFIG/>videos/1843_437_B2B.mp4?v=<VAR:FECHA_VIDEO/>" type="video/mp4">
+                                </video>
+                            <!-- </a> -->
+                        </div>
+                        <div class="carousel-item">
+                            <a href="#" target="#">
+                                <img class="d-block w-100" src="<VAR:URL_IMAGES/>banners_home/banner.jpg" alt="" style="">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mt-4 mb-5">
+                <div class="row">
+                    <VAR:MENU_CATALOGOS/>
+                </div>
+            </div>
+        </div>
+
+    
+    </div>
+
+    <VAR:SINEXISTENCIAS_MODAL/>
+    <VAR:FOOTER/>
+    <!-- <VAR:REPORTE_REQUISICIONES/> -->
+</body>
+
+</html>
